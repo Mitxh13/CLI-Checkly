@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="fav_icon.png">
+  <title>Checkly</title>
+  <style>
+    :root {
+      --bg: #0f172a;          /* slate-900 */
+      --bg-soft: #020617;     /* darker */
+      --card: #111827;        /* gray-900 */
+      --primary: #22d3ee;     /* cyan-400 */
+      --secondary: #38bdf8;   /* sky-400 */
+      --text-main: #e5e7eb;   /* gray-200 */
+      --text-muted: #9ca3af;  /* gray-400 */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #020617, #020617 30%, #020617 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #020617, #020617);
+    }
+
+    .hero {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-text p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      max-width: 480px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: #020617;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(34, 211, 238, 0.25);
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #020617, #020617);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .task {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: #020617;
+      margin-bottom: 12px;
+      color: var(--text-muted);
+    }
+
+    .task span {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+      flex-shrink: 0;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 50px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-box {
+      background: linear-gradient(145deg, #020617, #020617);
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .feature-box h3 {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .feature-box p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 120px 20px;
+      background: radial-gradient(circle at center, rgba(34,211,238,0.15), transparent 60%);
+    }
+
+    .cta h2 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: var(--text-muted);
+      margin-bottom: 35px;
+      font-size: 1.05rem;
+    }
+
+    .footer {
+    background-color: #020617;
+    padding: 28px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #9ca3af;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer a {
+    color: #22d3ee;
+    text-decoration: none;
+    font-weight: 500;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Checkly</h1>
+        <p>A modern, distraction-free to-do app designed to help you focus, organize, and move faster every day.</p>
+        <a href="login.html" class="btn">Start Organizing</a>
+      </div>
+      <div class="hero-card">
+        <div class="task"><span></span> Finish UI design</div>
+        <div class="task"><span></span> Review pull requests</div>
+        <div class="task"><span></span> Plan next sprint</div>
+        <div class="task"><span></span> Push release</div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Designed for Focus</h2>
+    <div class="features">
+      <div class="feature-box">
+        <h3>Minimal Interface</h3>
+        <p>Clean layouts and subtle accents keep your attention on what actually matters.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Lightning Fast</h3>
+        <p>Instant task creation and completion with zero unnecessary friction.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Daily Clarity</h3>
+        <p>Break your workload into achievable tasks and stay in control.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Get More Done Today</h2>
+    <p>Turn chaos into clarity with a to-do list that actually feels good to use.</p>
+    <a href="#" class="btn">Create Your First List</a>
+  </div>
+
+  <footer class="footer">
+  <p>
+    © 2026 Checkly. Released under the
+    <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">
+      MIT License
+    </a>.
+  </p>
+  <p>Made by Mitesh</p>
+  </footer>
+
+
+</body>
+</html>
